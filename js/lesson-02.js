@@ -228,3 +228,6 @@ if (login === 'Адмін') {
 } else {
   console.log('Я вас не знаю!');
 }
+
+console.log('\n');
+console.log('\n');
