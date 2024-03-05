@@ -100,7 +100,7 @@ console.log('\n');
 // Example 6 - Масиви та рядки
 console.log('Example 6 - Масиви та рядки');
 
-// Напиши скрипт, який перевериає рядок (зворотний порядок букв) і виводить його в консоль
+// Напиши скрипт, який перевертає рядок (зворотний порядок букв) і виводить його в консоль
 
 const string2 = 'Welcome to the future';
 console.log(string2);
@@ -117,12 +117,19 @@ console.log('Example 7 - Сортування масиву із циклом');
 const languages = ['python', 'javascript', 'c++', 'haskel', 'ruby'];
 console.log(languages);
 
+// Метод бульбашка
 for (let i = 0; i < languages.length; i += 1) {
-  if (languages[0] > languages[i]) {
-    const result = languages.splice(i, 1)[0];
-    languages.unshift(result);
+  for (let j = 0; j < languages.length; j += 1) {
+    if (languages[j] > languages[j + 1]) {
+      const item = languages[j];
+      languages[j] = languages[j + 1];
+      languages[j + 1] = item;
+    }
   }
 }
+
+// Сучасний метод
+// languages.sort((a, b) => a.localeCompare(b));
 
 console.log(languages);
 console.log('\n');
