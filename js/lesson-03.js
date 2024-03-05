@@ -52,7 +52,7 @@ console.log('Example 3 - Перебір масиву');
 
 // Напиши скрипт для перебору масиву fruits циклом for. Для кожного елементу масиву виведи у консоль рядок у форматі номер_елемента: значення_елемента. Нумерація елементів повинна починатися з 1
 
-const fruits = ['Apple', 'Grape', 'Strawbery', 'Banana', 'Lemon'];
+const fruits = ['Apple', 'Grape', 'Strawberry', 'Banana', 'Lemon'];
 console.table(fruits);
 
 for (let i = 0, n = 1; i < fruits.length; i += 1, n += 1) {
