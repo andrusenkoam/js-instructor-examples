@@ -279,3 +279,5 @@ const calculateAverage = (...args) => {
 console.log(calculateAverage(1, 2, 3, 4));
 console.log(calculateAverage(14, 8, 2));
 console.log(calculateAverage(27, 43, 2, 8, 36));
+console.log('\n');
+console.log('\n');
