@@ -10,7 +10,7 @@ const cars = [
     type: 'suv',
     amount: 14,
     price: 24045,
-    onsale: true,
+    onSale: true,
   },
   {
     make: 'Honda',
@@ -149,8 +149,8 @@ console.log('Example 6 - Метод find()');
 
 const getCarByModel = (cars, model) => cars.find((car) => car.model === model);
 
-console.log(getCarByModel(cars, 'F-150'));
-console.log(getCarByModel(cars, 'CX-9'));
+console.table(getCarByModel(cars, 'F-150'));
+console.table(getCarByModel(cars, 'CX-9'));
 console.log('\n');
 
 // Example 7 - Метод sort()
@@ -224,5 +224,79 @@ const getSortedCarsOnSale = (cars) =>
   cars.filter((car) => car.onSale).sort((a, b) => a.price - b.price);
 
 console.table(cars);
+console.log('\n');
+
+// Приклади застосування reduce
+console.log('Приклад застосування reduce');
+
+const str = 'duaguidgasuidgauisdhasudasdfhsgvfakhfugduashc';
+
+const result = str.split('').reduce((acc, item) => {
+  item in acc ? (acc[item] += 1) : (acc[item] = 1);
+  return acc;
+}, {});
+
+const result1 = str.split('').reduce((acc, item) => {
+  return {
+    ...acc,
+    [item]: acc[item] ? (acc[item] += 1) : 1,
+  };
+}, {});
+
+console.log(result);
+console.log(result1);
+console.log('\n');
+
+const fruitBasket = [
+  'banana',
+  'cherry',
+  'orange',
+  'apple',
+  'cherry',
+  'orange',
+  'apple',
+  'banana',
+  'cherry',
+  'orange',
+  'fig',
+];
+
+const count = fruitBasket.reduce((acc, fruit) => {
+  acc[fruit] = (acc[fruit] || 0) + 1;
+
+  return acc;
+}, {});
+
+console.log(count);
+console.log('\n');
+
+// Загальна кількість авто 6:
+// Вивести
+// 1 Honda
+// 2 Audi
+
+// 6 Reno
+
+// Якщо порожній массив
+// Вибачте, авто немає
+
+function logCars(arr) {
+  const result = arr.reduce(
+    (acc, car, idx) => {
+      return acc + `${idx + 1} - ${car}\n`;
+    },
+    arr.length
+      ? `Загальна кількість авто - ${arr.length}\n`
+      : 'Вибачте, авто немає 😱'
+  );
+
+  return result;
+}
+
+console.log(
+  logCars(['Honda', 'Audi', 'BMW', 'Skoda', 'Ford', 'Renault', 'Opel', 'KIA'])
+);
+console.log(logCars([]));
+
 console.log('\n');
 console.log('\n');
