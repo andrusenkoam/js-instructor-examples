@@ -146,7 +146,7 @@ const createNewProduct = (obj, callback) =>
     ...obj,
   });
 
-const logNewProduct = (obj) => console.log(obj);
+const logNewProduct = obj => console.log(obj);
 
 const logNewTotalPrice = ({ price, quantity }) =>
   console.log(`Загальна вартість продукту ${price * quantity} грошей!`);
@@ -198,9 +198,9 @@ const newAccount = {
   },
 };
 
-const newHandleSuccess = (message) => console.log(`✅ Success! ${message}`);
+const newHandleSuccess = message => console.log(`✅ Success! ${message}`);
 
-const newHandleError = (message) => console.log(`❌ Error! ${message}`);
+const newHandleError = message => console.log(`❌ Error! ${message}`);
 
 newAccount.withdraw(2000, handleSuccess, handleError);
 newAccount.withdraw(600, handleSuccess, handleError);
@@ -227,11 +227,11 @@ function newEach(array, callback) {
   return newArray;
 }
 
-console.log(newEach([64, 49, 36, 2, 16], (value) => value * 2));
-console.log(newEach([64, 49, 36, 2, 16], (value) => value - 10));
-console.log(newEach([64, 49, 36, 2, 16], (value) => Math.sqrt(value)));
-console.log(newEach([1.5, 2.1, 16.4, 9.7, 11.3], (value) => Math.ceil(value)));
-console.log(newEach([1.5, 2.1, 16.4, 9.7, 11.3], (value) => Math.floor(value)));
+console.log(newEach([64, 49, 36, 2, 16], value => value * 2));
+console.log(newEach([64, 49, 36, 2, 16], value => value - 10));
+console.log(newEach([64, 49, 36, 2, 16], value => Math.sqrt(value)));
+console.log(newEach([1.5, 2.1, 16.4, 9.7, 11.3], value => Math.ceil(value)));
+console.log(newEach([1.5, 2.1, 16.4, 9.7, 11.3], value => Math.floor(value)));
 console.log('\n');
 
 // Example 7 - Метод forEach
@@ -245,7 +245,7 @@ console.log('Example 7 - Метод forEach');
 //   items.forEach((item, index) => console.log(`${index + 1} - ${item}`));
 // }
 
-const logItems = (arr) => {
+const logItems = arr => {
   console.log(arr);
   arr.forEach((item, idx) => console.log(`${idx + 1} - ${item}`));
 };
@@ -271,7 +271,7 @@ console.log('Example 8 - Метод forEach');
 
 const calculateAverage = (...args) => {
   let total = 0;
-  args.forEach((arg) => (total += arg));
+  args.forEach(arg => (total += arg));
 
   return total / args.length;
 };

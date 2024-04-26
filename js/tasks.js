@@ -76,7 +76,7 @@ function findUniq(arr) {
   return arr.find((current, i) => {
     return current
       .split('')
-      .every((item) =>
+      .every(item =>
         arr.reduce(
           (acc, comparison, j) =>
             i !== j ? (acc = !comparison.includes(item)) : false,
